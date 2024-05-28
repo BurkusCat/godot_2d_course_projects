@@ -11,7 +11,9 @@ config_version=5
 [application]
 
 config/name="LearningGodot"
+run/main_scene="res://my_level.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
+boot_splash/show_image=false
 config/icon="res://icon.svg"
 
 [dotnet]

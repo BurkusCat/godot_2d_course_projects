@@ -1,0 +1,74 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5und8fmecctj"]
+
+[ext_resource type="Texture2D" uid="uid://df3x7mi3n52hu" path="res://icon.svg" id="1_x2n0e"]
+
+[node name="MyLevel" type="Node2D"]
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(790, -79)
+rotation = 3.47272
+scale = Vector2(4.84375, 0.203125)
+texture = ExtResource("1_x2n0e")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(555.25, 587)
+scale = Vector2(7.77734, 0.15625)
+texture = ExtResource("1_x2n0e")
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+position = Vector2(1029, 287.25)
+scale = Vector2(0.273438, 4.69922)
+texture = ExtResource("1_x2n0e")
+
+[node name="Sprite2D6" type="Sprite2D" parent="."]
+position = Vector2(288, -69)
+rotation = -0.326325
+scale = Vector2(4.07031, 0.28125)
+texture = ExtResource("1_x2n0e")
+
+[node name="Sprite2D7" type="Sprite2D" parent="."]
+position = Vector2(52.75, 302.25)
+scale = Vector2(0.238281, 4.43359)
+texture = ExtResource("1_x2n0e")
+
+[node name="Sprite2D8" type="Sprite2D" parent="."]
+position = Vector2(275, 410)
+rotation = 0.692143
+scale = Vector2(2.01541, 0.14081)
+texture = ExtResource("1_x2n0e")
+
+[node name="Sprite2D10" type="Sprite2D" parent="."]
+position = Vector2(832, 413)
+rotation = -0.683847
+scale = Vector2(2.01541, 0.14081)
+texture = ExtResource("1_x2n0e")
+
+[node name="Sprite2D9" type="Sprite2D" parent="."]
+position = Vector2(552, 493)
+scale = Vector2(2.91406, 0.125)
+texture = ExtResource("1_x2n0e")
+
+[node name="Sprite2D11" type="Sprite2D" parent="."]
+position = Vector2(533, 323)
+scale = Vector2(0.195313, 0.742188)
+texture = ExtResource("1_x2n0e")
+
+[node name="Sprite2D12" type="Sprite2D" parent="."]
+position = Vector2(567, 83)
+scale = Vector2(3.35156, 0.203125)
+texture = ExtResource("1_x2n0e")
+
+[node name="Sprite2D13" type="Sprite2D" parent="."]
+position = Vector2(418, 244)
+scale = Vector2(0.5625, 0.5625)
+texture = ExtResource("1_x2n0e")
+
+[node name="Sprite2D14" type="Sprite2D" parent="."]
+position = Vector2(660, 234)
+scale = Vector2(0.585938, 0.585938)
+texture = ExtResource("1_x2n0e")
+
+[node name="Sprite2D10" type="Sprite2D" parent="Sprite2D14"]
+position = Vector2(-221.867, 225.28)
+scale = Vector2(1.17333, 1.17333)
+texture = ExtResource("1_x2n0e")
