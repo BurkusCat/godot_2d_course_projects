@@ -5,5 +5,10 @@ func _ready():
 	test()
 
 func test():
-	print((2 + 3) * 5)
-	print("2 + 2 is " + str(4))
+	var my_variable = "Hello"
+	print(my_variable)
+	print(my_variable)
+	print(my_variable)
+	my_variable = "Good bye"
+	print(my_variable)
+	print(my_variable)
