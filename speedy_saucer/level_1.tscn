@@ -6,10 +6,11 @@
 [node name="Level1" type="Node2D"]
 
 [node name="Background" type="TextureRect" parent="."]
+z_index = -100
 offset_right = 1152.0
 offset_bottom = 648.0
 texture = ExtResource("1_0wwok")
 stretch_mode = 1
 
 [node name="Parent" parent="." instance=ExtResource("2_xmlws")]
-position = Vector2(248, 286)
+position = Vector2(669, 286)
