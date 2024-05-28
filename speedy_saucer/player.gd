@@ -2,13 +2,8 @@ extends RigidBody2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	test()
+	printDoubled(10)
 
-func test():
-	var my_variable = "Hello"
-	print(my_variable)
-	print(my_variable)
-	print(my_variable)
-	my_variable = "Good bye"
-	print(my_variable)
-	print(my_variable)
+func printDoubled(input_number: int):
+	print(input_number * 2)
+	
