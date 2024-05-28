@@ -11,9 +11,5 @@ offset_bottom = 648.0
 texture = ExtResource("1_0wwok")
 stretch_mode = 1
 
-[node name="Player" parent="." instance=ExtResource("2_xmlws")]
-position = Vector2(772, 90)
-
-[node name="Player2" parent="." instance=ExtResource("2_xmlws")]
-position = Vector2(314, 95)
-gravity_scale = 1.0
+[node name="Parent" parent="." instance=ExtResource("2_xmlws")]
+position = Vector2(248, 286)
