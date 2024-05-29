@@ -4,13 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://o2xvdtxq051c" path="res://ufoGreen.png" id="1_m1h4e"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7c53h"]
-radius = 46.0109
+radius = 18.0
 
 [node name="Player" type="RigidBody2D"]
 gravity_scale = 0.0
 script = ExtResource("1_is40r")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("1_m1h4e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
