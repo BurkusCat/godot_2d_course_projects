@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://o2xvdtxq051c" path="res://ufoGreen.png" id="1_m1h4e"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7c53h"]
-radius = 18.0
+radius = 4.35
 
 [node name="Player" type="RigidBody2D"]
 gravity_scale = 0.0
@@ -18,4 +18,5 @@ texture = ExtResource("1_m1h4e")
 shape = SubResource("CircleShape2D_7c53h")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.2, 1.2)
 position_smoothing_speed = 1.0
