@@ -1,25 +1,71 @@
-[gd_scene load_steps=5 format=3 uid="uid://ns8dw2a2fgs"]
+[gd_scene load_steps=7 format=3 uid="uid://ns8dw2a2fgs"]
 
 [ext_resource type="Texture2D" uid="uid://c3yfkqdfj3v4c" path="res://purple.png" id="1_0wwok"]
 [ext_resource type="Script" path="res://level.gd" id="1_yh5i2"]
 [ext_resource type="PackedScene" uid="uid://dgsbqm4dm4ayr" path="res://player.tscn" id="2_xmlws"]
 [ext_resource type="PackedScene" uid="uid://c4a53j3c2gwn5" path="res://maze.tscn" id="4_pn440"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_qc038"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_lmji5"]
+font_size = 15
+
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_yh5i2")
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="Graphics" type="Node" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Graphics"]
+layer = -10
+
+[node name="Background" type="TextureRect" parent="Graphics/CanvasLayer"]
 z_index = -100
-offset_right = 1152.0
-offset_bottom = 648.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("1_0wwok")
 stretch_mode = 1
 
+[node name="StartLabel" type="Label" parent="Graphics"]
+z_index = -25
+offset_left = 154.0
+offset_top = 217.0
+offset_right = 249.0
+offset_bottom = 262.0
+text = "START"
+label_settings = SubResource("LabelSettings_qc038")
+
+[node name="Tutorial" type="Label" parent="Graphics"]
+z_index = -25
+offset_left = 327.0
+offset_top = 183.0
+offset_right = 462.0
+offset_bottom = 310.0
+text = "Rules:
+1. WASD controls
+2. Don't leave the
+    maze
+3. Reach END"
+label_settings = SubResource("LabelSettings_lmji5")
+
+[node name="EndLabel" type="Label" parent="Graphics"]
+z_index = -25
+offset_left = 270.0
+offset_top = 67.0
+offset_right = 365.0
+offset_bottom = 112.0
+text = "END"
+label_settings = SubResource("LabelSettings_qc038")
+
 [node name="Player" parent="." instance=ExtResource("2_xmlws")]
+z_index = 1
 position = Vector2(196, 241)
 
 [node name="Maze" parent="." instance=ExtResource("4_pn440")]
-z_index = -1
+z_index = -50
 position = Vector2(232, 305)
 
 [connection signal="body_exited" from="Maze" to="." method="_on_maze_body_exited"]
