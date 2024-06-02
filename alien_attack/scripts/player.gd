@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal took_damage
+
 const speed = 18000
 
 var rocket_scene = preload("res://scenes/rocket.tscn")
@@ -33,3 +35,9 @@ func _physics_process(delta):
 	
 	var screen_size = get_viewport_rect().size
 	global_position = global_position.clamp(Vector2(0,0), screen_size)
+	
+func take_damage():
+	emit_signal("took_damage")
+
+func die():
+	queue_free()
