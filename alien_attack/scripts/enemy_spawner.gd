@@ -8,8 +8,28 @@ var path_enemy_scene = preload("res://scenes/path_enemy.tscn")
 @onready var enemy_container = $EnemyContainer
 @onready var spawn_positions = $SpawnPositions
 
+@onready var enemy_timer = $EnemyTimer
+@onready var path_enemy_timer = $PathEnemyTimer
+
+const min_normal_enemy_timer = 1
+const min_path_enemy_timer = 5
+
+# number of enemies to spawn before increasing difficulty
+const difficult_increase_threshold = 5
+
+# number of enemies until next difficulty
+var next_difficulty_count = difficult_increase_threshold
+
 func _on_timer_timeout():
 	spawn_enemy()
+	
+	next_difficulty_count -= 1
+	if next_difficulty_count <= 0:
+		enemy_timer.wait_time = clamp(enemy_timer.wait_time - 0.25, min_normal_enemy_timer, 3)
+		path_enemy_timer.wait_time = clamp(path_enemy_timer.wait_time - 0.75, min_path_enemy_timer, 10)
+		next_difficulty_count = difficult_increase_threshold
+		print(enemy_timer.wait_time)
+		print(path_enemy_timer.wait_time)
 
 func spawn_enemy():
 	var spawn_positions_array = spawn_positions.get_children()
