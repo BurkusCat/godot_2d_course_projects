@@ -8,6 +8,10 @@ var score = 0
 @onready var ui = $UI
 @onready var hud = $UI/HUD
 
+@onready var enemy_hit_sound = $EnemyHitSound
+@onready var player_hit_sound = $PlayerHitSound
+@onready var player_death_sound = $PlayerDeathSound
+
 var gos_scene = preload("res://scenes/game_over_screen.tscn")
 
 func _ready():
@@ -25,6 +29,7 @@ func _on_player_took_damage():
 
 	if (lives == 0):
 		player.die()
+		player_death_sound.play()
 		
 		await get_tree().create_timer(1.5).timeout
 
@@ -32,6 +37,8 @@ func _on_player_took_damage():
 		gos.set_score(score)
 		ui.add_child(gos)
 		hud.visible = false
+	else:
+		player_hit_sound.play()
 
 func _on_enemy_spawner_enemy_spawned(enemy_instance):
 	enemy_instance.connect("died", _on_enemy_died)
@@ -40,3 +47,4 @@ func _on_enemy_spawner_enemy_spawned(enemy_instance):
 func _on_enemy_died():
 	score += 100
 	hud.set_score_label(score)
+	enemy_hit_sound.play()
