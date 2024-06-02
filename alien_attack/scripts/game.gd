@@ -9,18 +9,18 @@ var score = 0
 
 func _ready():
 	hud.set_score_label(score)
+	hud.set_lives(lives)
 
 func _on_deathzone_area_entered(area):
 	area.die()
 
 func _on_player_took_damage():
 	lives -= 1
+	hud.set_lives(lives)
 
 	if (lives == 0):
 		print("Game over")
 		player.die()
-	else:
-		print(lives)
 
 func _on_enemy_spawner_enemy_spawned(enemy_instance):
 	enemy_instance.connect("died", _on_enemy_died)
