@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://capiiaxpr2yx4"]
+[gd_scene load_steps=10 format=3 uid="uid://capiiaxpr2yx4"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_ehc85"]
 [ext_resource type="PackedScene" uid="uid://db5l7ej6epqum" path="res://scenes/player.tscn" id="2_rwcp2"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://vexh5876b8wa" path="res://scenes/jump_pad.tscn" id="4_hqn5v"]
 [ext_resource type="PackedScene" uid="uid://cqcmre00la4h7" path="res://scenes/saw.tscn" id="5_45pri"]
 [ext_resource type="PackedScene" uid="uid://ds8fxlwrhdwr8" path="res://scenes/spike_ball.tscn" id="6_udwgq"]
+[ext_resource type="PackedScene" uid="uid://df7a5mw6qju7n" path="res://scenes/tile_map.tscn" id="7_kg30c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tivy2"]
 size = Vector2(521, 20)
@@ -22,7 +23,7 @@ collision_layer = 2
 collision_mask = 5
 
 [node name="Ground" type="StaticBody2D" parent="."]
-position = Vector2(3, 241)
+position = Vector2(-445, -367)
 
 [node name="Sprite2D" type="Sprite2D" parent="Ground"]
 modulate = Color(0, 0, 0, 1)
@@ -43,27 +44,31 @@ position = Vector2(361, 345)
 shape = SubResource("RectangleShape2D_d6nt3")
 
 [node name="StartPosition" type="Marker2D" parent="."]
-position = Vector2(313, 170)
+position = Vector2(313, 136)
 gizmo_extents = 28.0
 
 [node name="Objects" type="Node2D" parent="."]
 
 [node name="JumpPad" parent="Objects" instance=ExtResource("4_hqn5v")]
-position = Vector2(70, 230)
+position = Vector2(68, 199)
 
 [node name="JumpPad2" parent="Objects" instance=ExtResource("4_hqn5v")]
-position = Vector2(105, 230)
+position = Vector2(105, 199)
 jump_force = 350
 
 [node name="Traps" type="Node2D" parent="."]
 
 [node name="Saw" parent="Traps" instance=ExtResource("5_45pri")]
-position = Vector2(18, 220)
+position = Vector2(-86, 174)
 
 [node name="SpikeBall" parent="Traps" instance=ExtResource("6_udwgq")]
-position = Vector2(377, 208)
+position = Vector2(377, 173)
 
 [node name="Saw2" parent="Traps" instance=ExtResource("5_45pri")]
-position = Vector2(19, 170)
+position = Vector2(-86, 127)
+
+[node name="TileMap" parent="." instance=ExtResource("7_kg30c")]
+position = Vector2(-2, 23)
+layer_0/tile_data = PackedInt32Array(917502, 458752, 2, 917503, 458752, 2, 851968, 458752, 2, 851969, 458752, 2, 851970, 458752, 2, 851971, 458752, 2, 851972, 458752, 2, 851973, 458752, 2, 851974, 458752, 2, 851975, 458752, 2, 851976, 458752, 2, 851977, 458752, 2, 851978, 458752, 2, 851979, 458752, 2, 851980, 458752, 2, 851981, 458752, 2, 851982, 458752, 2, 851983, 458752, 2, 851984, 458752, 2, 851985, 458752, 2, 851986, 458752, 2, 851987, 458752, 2, 851988, 458752, 2, 851989, 458752, 2, 851990, 458752, 2, 851991, 458752, 2, 851992, 458752, 2, 851993, 458752, 2, 851994, 458752, 2, 851995, 458752, 2, 851996, 458752, 2, 851997, 524288, 2, 786430, 458752, 0, 851966, 458752, 1, 786431, 458752, 0, 851967, 458752, 1, 720896, 458752, 0, 786432, 458752, 1, 720897, 458752, 0, 786433, 458752, 1, 720898, 458752, 0, 786434, 458752, 1, 720899, 458752, 0, 786435, 458752, 1, 720900, 458752, 0, 786436, 458752, 1, 720901, 458752, 0, 786437, 458752, 1, 720902, 458752, 0, 786438, 458752, 1, 720903, 458752, 0, 786439, 458752, 1, 720904, 458752, 0, 786440, 458752, 1, 720905, 458752, 0, 786441, 458752, 1, 720906, 458752, 0, 786442, 458752, 1, 720907, 458752, 0, 786443, 458752, 1, 720908, 458752, 0, 786444, 458752, 1, 720909, 458752, 0, 786445, 458752, 1, 720910, 458752, 0, 786446, 458752, 1, 720911, 458752, 0, 786447, 458752, 1, 720912, 458752, 0, 786448, 458752, 1, 720913, 458752, 0, 786449, 458752, 1, 720914, 458752, 0, 786450, 458752, 1, 720915, 458752, 0, 786451, 458752, 1, 720916, 458752, 0, 786452, 458752, 1, 720917, 458752, 0, 786453, 458752, 1, 720918, 458752, 0, 786454, 458752, 1, 720919, 458752, 0, 786455, 458752, 1, 720920, 458752, 0, 786456, 458752, 1, 720921, 458752, 0, 786457, 458752, 1, 720922, 458752, 0, 786458, 458752, 1, 720923, 458752, 0, 786459, 458752, 1, 720924, 458752, 0, 786460, 458752, 1, 720925, 524288, 0, 786461, 524288, 1, 524304, 1114112, 1, 524305, 1179648, 1, 524306, 1245184, 1, 786429, 458752, 0, 851965, 458752, 1, 917501, 458752, 2, 786428, 458752, 0, 851964, 458752, 1, 917500, 458752, 2, 786427, 458752, 0, 851963, 458752, 1, 917499, 458752, 2, 786426, 458752, 0, 851962, 458752, 1, 917498, 458752, 2, 786425, 458752, 0, 851961, 458752, 1, 917497, 458752, 2, 786424, 393216, 0, 851960, 393216, 1, 917496, 393216, 2, 524288, 393216, 0, 589824, 393216, 1, 655360, 393216, 2, 524289, 458752, 0, 589825, 458752, 1, 655361, 458752, 2, 524290, 524288, 0, 589826, 524288, 1, 655362, 524288, 2, 393225, 1114112, 1, 393226, 1179648, 1, 393227, 1245184, 1)
 
 [connection signal="body_entered" from="Deathzone" to="." method="_on_deathzone_body_entered"]
