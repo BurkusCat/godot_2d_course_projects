@@ -1,9 +1,12 @@
 extends Node2D
 
-@onready var start_position = $StartPosition
-@onready var player = $Player
+@onready var start = $Start
+var player = null
 
 func _ready():
+	player = get_tree().get_first_node_in_group("player")
+	if player != null:
+		player.position = start.get_spawn_pos()
 	var traps = get_tree().get_nodes_in_group("traps")
 	
 	for trap in traps:
@@ -23,4 +26,4 @@ func _on_trap_touched_player():
 	
 func reset_player():
 	player.velocity = Vector2(0,0)
-	player.position = start_position.global_position
+	player.position = start.get_spawn_pos()
