@@ -7,8 +7,8 @@ func _ready():
 	player = get_tree().get_first_node_in_group("player")
 	if player != null:
 		player.position = start.get_spawn_pos()
+
 	var traps = get_tree().get_nodes_in_group("traps")
-	
 	for trap in traps:
 		trap.touched_player.connect(_on_trap_touched_player)
 
