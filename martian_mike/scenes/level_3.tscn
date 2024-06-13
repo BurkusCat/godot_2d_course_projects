@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cj3lr4nlypp7s"]
+[gd_scene load_steps=11 format=3 uid="uid://cj3lr4nlypp7s"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_k1jhj"]
 [ext_resource type="PackedScene" uid="uid://7acwld18mmea" path="res://scenes/bg.tscn" id="1_xfnjb"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c5ntm4pfuix5" path="res://scenes/ui_layer.tscn" id="4_bieeb"]
 [ext_resource type="PackedScene" uid="uid://dcqtv8cv74vgi" path="res://scenes/start.tscn" id="5_6lt3t"]
 [ext_resource type="PackedScene" uid="uid://db5l7ej6epqum" path="res://scenes/player.tscn" id="6_eyevt"]
+[ext_resource type="PackedScene" uid="uid://cqcmre00la4h7" path="res://scenes/saw.tscn" id="9_psssb"]
 
 [node name="Level_3" type="Node2D"]
 script = ExtResource("1_k1jhj")
@@ -34,5 +35,11 @@ position = Vector2(28, 223)
 [node name="Objects" type="Node2D" parent="."]
 
 [node name="Traps" type="Node2D" parent="."]
+
+[node name="Saw" parent="Traps" instance=ExtResource("9_psssb")]
+position = Vector2(237, 202)
+
+[node name="Saw2" parent="Traps" instance=ExtResource("9_psssb")]
+position = Vector2(363, 93)
 
 [node name="Player" parent="." instance=ExtResource("6_eyevt")]
