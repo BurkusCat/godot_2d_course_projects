@@ -71,14 +71,19 @@ func reset_player():
 	player.position = start.get_spawn_pos()
 
 func _on_exit_body_entered(body):
-	if body is Player:
-		if is_final_level || next_level != null:
-			win = true
-			exit.animate()
-			body.active = false
-			await get_tree().create_timer(1.5).timeout
-			
-			if is_final_level:
-				ui_layer.show_win_screen(true)
-			else:
-				get_tree().change_scene_to_packed(next_level)
+	if not (body is Player):
+		pass
+		
+	if not (is_final_level || next_level != null):
+		# level not setup correctly
+		pass
+
+	win = true
+	exit.animate()
+	body.active = false
+	await get_tree().create_timer(1.5).timeout
+	
+	if is_final_level:
+		ui_layer.show_win_screen(true)
+	else:
+		get_tree().change_scene_to_packed(next_level)
