@@ -9,6 +9,11 @@ public partial class Player : CharacterBody3D
 
     private Vector2 direction = new();
 
+    public override void _Ready()
+    {
+        animPlayerNode.Play("Idle");
+    }
+
     public override void _PhysicsProcess(double delta)
     {
         Velocity = new(direction.X, 0, direction.Y);
@@ -22,5 +27,14 @@ public partial class Player : CharacterBody3D
         direction = Input.GetVector(
             "MoveLeft", "MoveRight", "MoveForward", "MoveBackward"
         );
+
+        if (direction == Vector2.Zero)
+        {
+            animPlayerNode.Play("Idle");
+        }
+        else
+        {
+            animPlayerNode.Play("Move");
+        }
     }
 }
