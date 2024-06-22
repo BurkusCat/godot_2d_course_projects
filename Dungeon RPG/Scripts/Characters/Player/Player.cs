@@ -3,6 +3,10 @@ using System;
 
 public partial class Player : CharacterBody3D
 {
+    [ExportGroup("Required Nodes")]
+    [Export] private AnimationPlayer animPlayerNode;
+    [Export] private Sprite3D spriteNode;
+
     private Vector2 direction = new();
 
     public override void _PhysicsProcess(double delta)
