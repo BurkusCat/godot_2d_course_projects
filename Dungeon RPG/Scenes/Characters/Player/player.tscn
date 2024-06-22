@@ -75,10 +75,11 @@ _data = {
 "Move": SubResource("Animation_gd0rk")
 }
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("animPlayerNode", "spriteNode")]
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("animPlayerNode", "spriteNode", "stateMachineNode")]
 script = ExtResource("1_lpy8o")
 animPlayerNode = NodePath("AnimationPlayer")
 spriteNode = NodePath("Sprite3D")
+stateMachineNode = NodePath("StateMachine")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 texture_filter = 0
