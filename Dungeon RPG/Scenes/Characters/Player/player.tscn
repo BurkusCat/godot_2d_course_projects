@@ -103,6 +103,8 @@ _data = {
 
 [node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("AnimPlayerNode", "SpriteNode", "StateMachineNode")]
 collision_layer = 2
+floor_max_angle = 1.55334
+floor_snap_length = 0.4
 script = ExtResource("1_lpy8o")
 AnimPlayerNode = NodePath("AnimationPlayer")
 SpriteNode = NodePath("Sprite3D")
