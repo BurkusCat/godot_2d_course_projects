@@ -22,13 +22,13 @@ public partial class PlayerDashState : PlayerState
     private void HandleDashTimeout()
     {
         characterNode.Velocity = Vector3.Zero;
-        characterNode.stateMachineNode.SwitchState<PlayerIdleState>();
+        characterNode.StateMachineNode.SwitchState<PlayerIdleState>();
     }
 
     protected override void EnterState()
     {
         base.EnterState();
-        characterNode.animPlayerNode.Play(GameConstants.ANIM_DASH);
+        characterNode.AnimPlayerNode.Play(GameConstants.ANIM_DASH);
 
         characterNode.Velocity = new(
             characterNode.direction.X, 0, characterNode.direction.Y
@@ -37,7 +37,7 @@ public partial class PlayerDashState : PlayerState
         if (characterNode.Velocity == Vector3.Zero)
         {
             // if we are idling, dash the direction we are facing
-            characterNode.Velocity = characterNode.spriteNode.FlipH
+            characterNode.Velocity = characterNode.SpriteNode.FlipH
                 ? Vector3.Left
                 : Vector3.Right;
         }
