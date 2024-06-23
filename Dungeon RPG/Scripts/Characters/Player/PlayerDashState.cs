@@ -4,11 +4,12 @@ using System;
 public partial class PlayerDashState : Node
 {
     private Player characterNode;
+    [Export] private Timer dashTimerNode;
 
     public override void _Ready()
     {
         characterNode = GetOwner<Player>();
-        SetPhysicsProcess(false);
+        dashTimerNode.Timeout += HandleDashTimeout;
     }
 
     public override void _PhysicsProcess(double delta)
@@ -22,11 +23,12 @@ public partial class PlayerDashState : Node
         if (what == 5001)
         {
             characterNode.animPlayerNode.Play(GameConstants.ANIM_DASH);
-            SetPhysicsProcess(true);
+            dashTimerNode.Start();
         }
-        else if (what == 5002)
-        {
-            SetPhysicsProcess(false);
-        }
+    }
+
+    private void HandleDashTimeout()
+    {
+        characterNode.stateMachineNode.SwitchState<PlayerIdleState>();
     }
 }
