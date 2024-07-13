@@ -36,10 +36,10 @@
 [ext_resource type="Script" path="res://Scripts/Characters/Player/PlayerMoveState.cs" id="33_klvmt"]
 [ext_resource type="Texture2D" uid="uid://dwtd0i7u6re8e" path="res://Assets/Sprites/Characters/Player/Sliding/Sliding_000.png" id="33_wuwj7"]
 [ext_resource type="Texture2D" uid="uid://b0ttvn5802n34" path="res://Assets/Sprites/Characters/Player/Sliding/Sliding_001.png" id="34_l6gl3"]
-[ext_resource type="Script" path="res://Scripts/Characters/StateMachine.cs" id="34_yer7u"]
 [ext_resource type="Texture2D" uid="uid://b0h7v05uvvma0" path="res://Assets/Sprites/Characters/Player/Sliding/Sliding_002.png" id="35_0wdk5"]
 [ext_resource type="Texture2D" uid="uid://ets58u4lfncq" path="res://Assets/Sprites/Characters/Player/Sliding/Sliding_003.png" id="36_vbxye"]
 [ext_resource type="Texture2D" uid="uid://bjkkqgtmefise" path="res://Assets/Sprites/Characters/Player/Sliding/Sliding_004.png" id="37_ascib"]
+[ext_resource type="PackedScene" uid="uid://dh77u3g7mpbq4" path="res://Scenes/Characters/state_machine.tscn" id="38_kc2kk"]
 [ext_resource type="Script" path="res://Scripts/Characters/Player/PlayerDashState.cs" id="41_yj3vw"]
 
 [sub_resource type="Animation" id="Animation_xbllc"]
@@ -113,17 +113,16 @@ StateMachineNode = NodePath("StateMachine")
 [node name="Sprite3D" type="Sprite3D" parent="."]
 pixel_size = 0.0025
 texture_filter = 0
-texture = ExtResource("19_l87oy")
+texture = ExtResource("2_25g4g")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_00jlg")
 }
 
-[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("currentState", "states")]
-script = ExtResource("34_yer7u")
+[node name="StateMachine" parent="." node_paths=PackedStringArray("currentState", "states") instance=ExtResource("38_kc2kk")]
 currentState = NodePath("IdleState")
-states = [NodePath("IdleState"), NodePath("MoveState"), NodePath("DashState")]
+states = [NodePath("MoveState"), NodePath("DashState"), NodePath("IdleState")]
 
 [node name="IdleState" type="Node" parent="StateMachine"]
 script = ExtResource("32_q8l5d")
