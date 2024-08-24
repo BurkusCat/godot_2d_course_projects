@@ -16,12 +16,18 @@ public partial class EnemyChaseState : EnemyState
             .First() as CharacterBody3D;
 
         timerNode.Timeout += HandleTimeout;
+        characterNode.ChaseAreaNode.BodyEntered += HandleChaseAreaBodyEntered;
+        characterNode.ChaseAreaNode.BodyExited += HandleChaseAreaBodyExited;
+        characterNode.AttackAreaNode.BodyEntered += HandleAttackAreaBodyEntered;
     }
 
 
     protected override void ExitState()
     {
-        timerNode.Timeout += HandleTimeout;
+        timerNode.Timeout -= HandleTimeout;
+        characterNode.ChaseAreaNode.BodyEntered -= HandleChaseAreaBodyEntered;
+        characterNode.ChaseAreaNode.BodyExited -= HandleChaseAreaBodyExited;
+        characterNode.AttackAreaNode.BodyEntered -= HandleAttackAreaBodyEntered;
     }
 
 
@@ -34,5 +40,15 @@ public partial class EnemyChaseState : EnemyState
     {
         destination = target.GlobalPosition;
         characterNode.AgentNode.TargetPosition = destination;
+    }
+
+    protected void HandleChaseAreaBodyExited(Node3D body)
+    {
+        characterNode.StateMachineNode.SwitchState<EnemyReturnState>();
+    }
+
+    protected void HandleAttackAreaBodyEntered(Node3D body)
+    {
+        characterNode.StateMachineNode.SwitchState<EnemyAttackState>();
     }
 }
