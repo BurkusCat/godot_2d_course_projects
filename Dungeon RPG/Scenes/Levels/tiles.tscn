@@ -16,7 +16,7 @@
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.74288, 0, 0)
 
 [node name="stairs_wood_decorated_gltf" parent="." instance=ExtResource("3_ng5my")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.804, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.0568, -0.548105, -0.779809)
 
 [node name="wall_corner_gltf" parent="." instance=ExtResource("4_h6wse")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.2186, 0, 0)
