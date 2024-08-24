@@ -1,3 +1,4 @@
+using System;
 using Godot;
 
 public partial class EnemyPatrolState : EnemyState
@@ -21,12 +22,14 @@ public partial class EnemyPatrolState : EnemyState
 
         characterNode.AgentNode.NavigationFinished += HandleNavigationFinished;
         idleTimerNode.Timeout += HandleTimeout;
+        characterNode.ChaseAreaNode.BodyEntered += HandleChaseAreaBodyEntered;
     }
 
     protected override void ExitState()
     {
         characterNode.AgentNode.NavigationFinished -= HandleNavigationFinished;
         idleTimerNode.Timeout -= HandleTimeout;
+        characterNode.ChaseAreaNode.BodyEntered -= HandleChaseAreaBodyEntered;
     }
 
     public override void _PhysicsProcess(double delta)
