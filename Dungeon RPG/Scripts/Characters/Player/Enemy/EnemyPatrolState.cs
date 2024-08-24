@@ -1,18 +1,14 @@
 using Godot;
 
-public partial class EnemyReturnState : EnemyState
+public partial class EnemyPatrolState : EnemyState
 {
-    public override void _Ready()
-    {
-        base._Ready();
-
-        // go to the home point
-        destination = GetPointGlobalPosition(0);
-    }
-
     protected override void EnterState()
     {
         characterNode.AnimPlayerNode.Play(GameConstants.ANIM_MOVE);
+
+        // go to the 2nd point in the path, the point after
+        // the return point
+        destination = GetPointGlobalPosition(1);
         characterNode.AgentNode.TargetPosition = destination;
     }
 
