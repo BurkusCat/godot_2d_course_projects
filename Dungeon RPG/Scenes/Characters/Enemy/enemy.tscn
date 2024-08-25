@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bgmc44e5vmshb" path="res://Assets/Sprites/Characters/Enemy Knight/Idle/0_Demons_of_Darkness_Idle_000.png" id="1_3vmds"]
 [ext_resource type="Texture2D" uid="uid://mc57vde63p3x" path="res://Assets/Sprites/Characters/Enemy Knight/Walking/0_Demons_of_Darkness_Walking_012.png" id="1_8bc72"]
 [ext_resource type="Texture2D" uid="uid://crgqwr8i2o0jt" path="res://Assets/Sprites/Characters/Enemy Knight/Idle/0_Demons_of_Darkness_Idle_001.png" id="1_884xm"]
-[ext_resource type="Script" path="res://Scripts/Characters/Player/Enemy/Enemy.cs" id="1_b07um"]
+[ext_resource type="Script" path="res://Scripts/Characters/Enemy/Enemy.cs" id="1_a7wso"]
 [ext_resource type="Texture2D" uid="uid://bfsm48vnsadf6" path="res://Assets/Sprites/Characters/Enemy Knight/Death/smoke-Fx3_17.png" id="1_g6t8k"]
 [ext_resource type="Texture2D" uid="uid://dxbxueoojw5wl" path="res://Assets/Sprites/Characters/Enemy Knight/Attack/0_Demons_of_Darkness_Slashing_000.png" id="1_gx86h"]
 [ext_resource type="Texture2D" uid="uid://y1epx7blho82" path="res://Assets/Sprites/Characters/Enemy Knight/TakeHit/0_Demons_of_Darkness_Hurt_000.png" id="1_n2ha5"]
@@ -100,11 +100,11 @@
 [ext_resource type="Texture2D" uid="uid://d2mpbvuthpf4m" path="res://Assets/Sprites/Characters/Enemy Knight/Attack/0_Demons_of_Darkness_Slashing_009.png" id="97_5lfxf"]
 [ext_resource type="Texture2D" uid="uid://bk48yrfwrwmt2" path="res://Assets/Sprites/Characters/Enemy Knight/Attack/0_Demons_of_Darkness_Slashing_011.png" id="98_vfkx4"]
 [ext_resource type="PackedScene" uid="uid://dh77u3g7mpbq4" path="res://Scenes/Characters/state_machine.tscn" id="99_ejwlg"]
-[ext_resource type="Script" path="res://Scripts/Characters/Player/Enemy/EnemyIdleState.cs" id="100_83ttr"]
-[ext_resource type="Script" path="res://Scripts/Characters/Player/Enemy/EnemyReturnState.cs" id="102_b6e4b"]
-[ext_resource type="Script" path="res://Scripts/Characters/Player/Enemy/EnemyPatrolState.cs" id="103_v285k"]
-[ext_resource type="Script" path="res://Scripts/Characters/Player/Enemy/EnemyChaseState.cs" id="104_xuofu"]
-[ext_resource type="Script" path="res://Scripts/Characters/Player/Enemy/EnemyAttackState.cs" id="105_4g7qh"]
+[ext_resource type="Script" path="res://Scripts/Characters/Enemy/EnemyIdleState.cs" id="101_8q1d7"]
+[ext_resource type="Script" path="res://Scripts/Characters/Enemy/EnemyReturnState.cs" id="102_hyuvj"]
+[ext_resource type="Script" path="res://Scripts/Characters/Enemy/EnemyPatrolState.cs" id="103_n8jgb"]
+[ext_resource type="Script" path="res://Scripts/Characters/Enemy/EnemyChaseState.cs" id="104_xvqpf"]
+[ext_resource type="Script" path="res://Scripts/Characters/Enemy/EnemyAttackState.cs" id="105_w4cad"]
 
 [sub_resource type="Animation" id="Animation_uhuie"]
 resource_name = "Attack"
@@ -221,7 +221,7 @@ radius = 1.4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.19209e-07, 0.00265079, -6.79493e-06)
 collision_layer = 4
 collision_mask = 3
-script = ExtResource("1_b07um")
+script = ExtResource("1_a7wso")
 AnimPlayerNode = NodePath("AnimationPlayer")
 SpriteNode = NodePath("Sprite3D")
 StateMachineNode = NodePath("StateMachine")
@@ -231,7 +231,7 @@ AttackAreaNode = NodePath("AttackArea")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 pixel_size = 0.0025
-texture = ExtResource("1_gx86h")
+texture = ExtResource("98_vfkx4")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -247,20 +247,20 @@ currentState = NodePath("IdleState")
 states = [NodePath("IdleState"), NodePath("ReturnState"), NodePath("PatrolState"), NodePath("ChaseState"), NodePath("AttackState")]
 
 [node name="IdleState" type="Node" parent="StateMachine"]
-script = ExtResource("100_83ttr")
+script = ExtResource("101_8q1d7")
 
 [node name="ReturnState" type="Node" parent="StateMachine"]
-script = ExtResource("102_b6e4b")
+script = ExtResource("102_hyuvj")
 
 [node name="PatrolState" type="Node" parent="StateMachine" node_paths=PackedStringArray("idleTimerNode")]
-script = ExtResource("103_v285k")
+script = ExtResource("103_n8jgb")
 idleTimerNode = NodePath("Timer")
 
 [node name="Timer" type="Timer" parent="StateMachine/PatrolState"]
 one_shot = true
 
 [node name="ChaseState" type="Node" parent="StateMachine" node_paths=PackedStringArray("timerNode")]
-script = ExtResource("104_xuofu")
+script = ExtResource("104_xvqpf")
 timerNode = NodePath("Timer")
 
 [node name="Timer" type="Timer" parent="StateMachine/ChaseState"]
@@ -268,7 +268,7 @@ wait_time = 0.5
 autostart = true
 
 [node name="AttackState" type="Node" parent="StateMachine"]
-script = ExtResource("105_4g7qh")
+script = ExtResource("105_w4cad")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 debug_enabled = true
