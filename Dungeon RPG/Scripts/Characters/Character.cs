@@ -1,3 +1,4 @@
+using System;
 using Godot;
 
 public abstract partial class Character : CharacterBody3D
@@ -6,6 +7,7 @@ public abstract partial class Character : CharacterBody3D
     [Export] public AnimationPlayer AnimPlayerNode { get; private set; }
     [Export] public Sprite3D SpriteNode { get; private set; }
     [Export] public StateMachine StateMachineNode { get; private set; }
+    [Export] public Area3D HurtboxNode { get; private set; }
 
 
     [ExportGroup("AI Nodes")]
@@ -16,6 +18,16 @@ public abstract partial class Character : CharacterBody3D
 
 
     public Vector2 direction = new();
+
+    public override void _Ready()
+    {
+        HurtboxNode.AreaEntered += HandleHurtboxEntered;
+    }
+
+    private void HandleHurtboxEntered(Area3D area)
+    {
+        GD.Print($"{area.Name} hit");
+    }
 
     public void Flip()
     {
