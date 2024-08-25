@@ -132,6 +132,20 @@ tracks/0/keys = {
 "update": 1,
 "values": [ExtResource("1_gx86h"), ExtResource("89_8ct13"), ExtResource("90_3i305"), ExtResource("91_fq4j2"), ExtResource("92_xmj6q"), ExtResource("93_dcf4k"), ExtResource("94_hrrlc"), ExtResource("95_15cn5"), ExtResource("96_cjjli"), ExtResource("97_5lfxf"), ExtResource("98_vfkx4"), ExtResource("1_gx86h")]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StateMachine/AttackState")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.25),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"PerformHit"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_8mtfd"]
 resource_name = "Death"
@@ -226,7 +240,7 @@ _data = {
 radius = 6.0
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_pek48"]
-radius = 1.4
+radius = 1.15
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kb54q"]
 size = Vector3(0.5, 0.5, 0.5)
@@ -249,7 +263,7 @@ AttackAreaNode = NodePath("AttackArea")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 pixel_size = 0.0025
-texture = ExtResource("98_vfkx4")
+texture = ExtResource("92_xmj6q")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -319,3 +333,4 @@ collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
 shape = SubResource("BoxShape3D_kb54q")
+disabled = true
