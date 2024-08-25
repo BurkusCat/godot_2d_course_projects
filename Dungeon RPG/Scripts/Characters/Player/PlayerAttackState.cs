@@ -42,6 +42,8 @@ public partial class PlayerAttackState : PlayerState
             maxComboCount + 1);
 
         characterNode.StateMachineNode.SwitchState<PlayerIdleState>();
+
+        characterNode.ToggleHitbox(true);
     }
 
     private void PerformHit()
@@ -54,5 +56,7 @@ public partial class PlayerAttackState : PlayerState
         newPosition *= distanceMultiplier;
 
         characterNode.HitboxNode.Position = newPosition;
+
+        characterNode.ToggleHitbox(false);
     }
 }
