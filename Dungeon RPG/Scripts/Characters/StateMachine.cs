@@ -20,6 +20,12 @@ public partial class StateMachine : Node
             return;
         }
 
+        if (currentState is T)
+        {
+            // don't switch to a state we are already in
+            return;
+        }
+
         currentState.Notification(GameConstants.NOTIFICATION_EXIT_STATE);
         currentState = newState;
         currentState.Notification(GameConstants.NOTIFICATION_ENTER_STATE);

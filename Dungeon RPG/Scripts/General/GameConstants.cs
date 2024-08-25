@@ -5,6 +5,7 @@ public partial class GameConstants
     public const string ANIM_MOVE = "Move";
     public const string ANIM_DASH = "Dash";
     public const string ANIM_ATTACK = "Attack";
+    public const string ANIM_DEATH = "Death";
 }
 
 public partial class GameConstants
