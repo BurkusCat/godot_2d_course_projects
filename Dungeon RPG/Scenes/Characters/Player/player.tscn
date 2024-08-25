@@ -202,7 +202,7 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_6jg4f"]
 size = Vector3(0.5, 0.5, 0.5)
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("AnimPlayerNode", "SpriteNode", "StateMachineNode")]
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("AnimPlayerNode", "SpriteNode", "StateMachineNode", "HitboxNode")]
 collision_layer = 2
 collision_mask = 5
 floor_max_angle = 1.55334
@@ -212,6 +212,7 @@ stats = Array[Object]([SubResource("Resource_y43lt"), SubResource("Resource_30pc
 AnimPlayerNode = NodePath("AnimationPlayer")
 SpriteNode = NodePath("Sprite3D")
 StateMachineNode = NodePath("StateMachine")
+HitboxNode = NodePath("Hitbox")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 pixel_size = 0.0025
@@ -254,7 +255,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.297784, 0)
 shape = SubResource("CapsuleShape3D_nou7x")
 
 [node name="Hitbox" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.869638, 0, 0)
 collision_layer = 2
 collision_mask = 0
 
