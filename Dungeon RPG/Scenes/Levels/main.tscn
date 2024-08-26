@@ -1,6 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://x1c57p12x4sw"]
+[gd_scene load_steps=18 format=3 uid="uid://x1c57p12x4sw"]
 
 [ext_resource type="Script" path="res://Scripts/Levels/Main.cs" id="1_cjg6x"]
+[ext_resource type="PackedScene" uid="uid://bsau55ah2ry6c" path="res://Scenes/General/ui.tscn" id="2_dxy3x"]
 [ext_resource type="PackedScene" uid="uid://dvogsqfv5rtji" path="res://Scenes/Characters/Player/player.tscn" id="2_wyuei"]
 [ext_resource type="MeshLibrary" uid="uid://dau30rbnrtxxk" path="res://Resources/tiles.tres" id="3_blb7v"]
 [ext_resource type="PackedScene" uid="uid://bjyukmgaumuuh" path="res://Scenes/Characters/Enemy/enemy.tscn" id="4_uc677"]
@@ -73,6 +74,8 @@ point_count = 5
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_cjg6x")
+
+[node name="UI" parent="." instance=ExtResource("2_dxy3x")]
 
 [node name="Player" parent="." instance=ExtResource("2_wyuei")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75526, 0)
