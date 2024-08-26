@@ -11,6 +11,8 @@ public partial class EnemyDeathState : EnemyState
 
     private void HandleAnimationFinished(StringName animName)
     {
-        characterNode.QueueFree();
+        // we have to delete the parent path otherwise the remaining
+        // enemy count won't properly update
+        characterNode.PathNode.QueueFree();
     }
 }
