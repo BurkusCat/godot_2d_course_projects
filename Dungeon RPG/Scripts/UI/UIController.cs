@@ -1,6 +1,7 @@
 using Godot;
 using System.Linq;
 using System.Collections.Generic;
+using System;
 
 public partial class UIController : Control
 {
@@ -14,5 +15,12 @@ public partial class UIController : Control
             .ToDictionary(element => element.container);
 
         containers[ContainerType.Start].Visible = true;
+        containers[ContainerType.Start].ButtonNode.Pressed += HandleStartPressed;
+    }
+
+    private void HandleStartPressed()
+    {
+        GetTree().Paused = false;
+        containers[ContainerType.Start].Visible = false;
     }
 }
