@@ -1,5 +1,4 @@
 using Godot;
-using System;
 
 public partial class TreasureChest : StaticBody3D
 {
@@ -16,13 +15,17 @@ public partial class TreasureChest : StaticBody3D
 
     public override void _Input(InputEvent @event)
     {
-        if (!areaNode.HasOverlappingBodies()
-            || Input.IsActionJustPressed(GameConstants.INPUT_INTERACT))
+        if (!areaNode.Monitoring
+            || !areaNode.HasOverlappingBodies()
+            || !Input.IsActionJustPressed(GameConstants.INPUT_INTERACT))
         {
             // player is not within range of treasure chest and button not pressed
             return;
         }
 
-        GD.Print("Yeoo");
+        // stop detecting the player
+        areaNode.Monitoring = false;
+
+        GameEvents.RaiseReward(reward);
     }
 }
