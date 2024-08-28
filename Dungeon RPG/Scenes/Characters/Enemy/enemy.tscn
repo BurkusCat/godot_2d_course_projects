@@ -1,4 +1,4 @@
-[gd_scene load_steps=120 format=3 uid="uid://bjyukmgaumuuh"]
+[gd_scene load_steps=121 format=3 uid="uid://bjyukmgaumuuh"]
 
 [ext_resource type="Texture2D" uid="uid://bgmc44e5vmshb" path="res://Assets/Sprites/Characters/Enemy Knight/Idle/0_Demons_of_Darkness_Idle_000.png" id="1_3vmds"]
 [ext_resource type="Texture2D" uid="uid://mc57vde63p3x" path="res://Assets/Sprites/Characters/Enemy Knight/Walking/0_Demons_of_Darkness_Walking_012.png" id="1_8bc72"]
@@ -107,6 +107,7 @@
 [ext_resource type="Script" path="res://Scripts/Characters/Enemy/EnemyChaseState.cs" id="104_xvqpf"]
 [ext_resource type="Script" path="res://Scripts/Characters/Enemy/EnemyAttackState.cs" id="105_w4cad"]
 [ext_resource type="Script" path="res://Scripts/Characters/Enemy/EnemyDeathState.cs" id="107_vr3ir"]
+[ext_resource type="Script" path="res://Scripts/Characters/AttackHitbox.cs" id="108_i5g5a"]
 
 [sub_resource type="Resource" id="Resource_7ckkn"]
 script = ExtResource("2_8mrk5")
@@ -334,6 +335,7 @@ shape = SubResource("CapsuleShape3D_r8seo")
 [node name="Hitbox" type="Area3D" parent="."]
 collision_layer = 4
 collision_mask = 0
+script = ExtResource("108_i5g5a")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
 shape = SubResource("BoxShape3D_kb54q")

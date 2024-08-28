@@ -2,7 +2,11 @@ using Godot;
 
 public partial class Bomb : Node3D
 {
+    [Export(PropertyHint.Range, "0,20,1")]
+    public float Damage { get; private set; } = 10;
+
     [Export] private AnimationPlayer playerNode;
+
 
     public override void _Ready()
     {
