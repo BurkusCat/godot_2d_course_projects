@@ -18,6 +18,7 @@ public partial class GameConstants
     public const string INPUT_MOVE_DASH = "Dash";
     public const string INPUT_ATTACK = "Attack";
     public const string INPUT_PAUSE = "Pause";
+    public const string INPUT_INTERACT = "Interact";
 }
 
 public partial class GameConstants
