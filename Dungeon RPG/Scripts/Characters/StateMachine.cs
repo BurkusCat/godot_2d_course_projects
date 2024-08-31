@@ -4,7 +4,7 @@ using System.Linq;
 public partial class StateMachine : Node
 {
     [Export] private Node currentState;
-    [Export] private Node[] states;
+    [Export] private CharacterState[] states;
 
     public override void _Ready()
     {
@@ -13,7 +13,8 @@ public partial class StateMachine : Node
 
     public void SwitchState<T>()
     {
-        Node newState = states.FirstOrDefault(state => state is T);
+        CharacterState newState = states
+            .FirstOrDefault(state => state is T);
 
         if (newState == null)
         {
@@ -21,6 +22,12 @@ public partial class StateMachine : Node
         }
 
         if (currentState is T)
+        {
+            // don't switch to a state we are already in
+            return;
+        }
+
+        if (!newState.CanTransition())
         {
             // don't switch to a state we are already in
             return;
