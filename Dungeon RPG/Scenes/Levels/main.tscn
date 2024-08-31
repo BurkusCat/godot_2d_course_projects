@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://x1c57p12x4sw"]
+[gd_scene load_steps=60 format=3 uid="uid://x1c57p12x4sw"]
 
 [ext_resource type="Script" path="res://Scripts/Levels/Main.cs" id="1_cjg6x"]
 [ext_resource type="PackedScene" uid="uid://bsau55ah2ry6c" path="res://Scenes/General/ui.tscn" id="2_dxy3x"]
@@ -28,6 +28,9 @@
 [ext_resource type="PackedScene" uid="uid://dagb705bctq46" path="res://Assets/Models/Dungeon/gltf/banner_blue.gltf.glb" id="15_gd1ie"]
 [ext_resource type="PackedScene" uid="uid://dkieiquyeg3u1" path="res://Assets/Models/Dungeon/gltf/banner_shield_brown.gltf.glb" id="16_g1n34"]
 [ext_resource type="PackedScene" uid="uid://dthjutbimv30o" path="res://Assets/Models/Dungeon/gltf/banner_shield_red.gltf.glb" id="17_74jle"]
+[ext_resource type="PackedScene" uid="uid://dlmbl5ym6jdih" path="res://Assets/Models/Dungeon/gltf/candle.gltf.glb" id="18_3lifl"]
+[ext_resource type="PackedScene" uid="uid://b62rppugihbll" path="res://Scenes/General/torch.tscn" id="21_hexi4"]
+[ext_resource type="PackedScene" uid="uid://qve5w6ad8ew1" path="res://Scenes/General/candle.tscn" id="23_dh14d"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_5plf7"]
 rayleigh_color = Color(0.234476, 0.045896, 0.632697, 1)
@@ -448,6 +451,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.8584, 5.05, -51.2687)
 [node name="table_medium_broken_gltf" parent="Environment/NavigationRegion3D/AvoidableItems/Upstairs" instance=ExtResource("10_wxems")]
 transform = Transform3D(0.413454, 0, -0.910525, 0, 1, 0, 0.910525, 0, 0.413454, 23.176, 5.05, -52.0513)
 
+[node name="candle_gltf" parent="Environment" instance=ExtResource("18_3lifl")]
+
 [node name="WallItems" type="Node3D" parent="Environment"]
 
 [node name="banner_blue_gltf" parent="Environment/WallItems" instance=ExtResource("15_gd1ie")]
@@ -539,6 +544,159 @@ transform = Transform3D(-0.00588821, 0, 0.999953, 0, 0.701141, 0, -0.606753, 0, 
 
 [node name="banner_blue_gltf18" parent="Environment/WallItems" instance=ExtResource("15_gd1ie")]
 transform = Transform3D(-0.00588821, 0, 0.999953, 0, 0.701141, 0, -0.606753, 0, -0.009704, 5.91799, 5.62987, -45.0483)
+
+[node name="Torch" parent="Environment/WallItems" instance=ExtResource("21_hexi4")]
+transform = Transform3D(1, 0, 0, 0, 0.990031, -0.140849, 0, 0.140849, 0.990031, -3.60895, 3.08476, -6.28945)
+
+[node name="Torch2" parent="Environment/WallItems" instance=ExtResource("21_hexi4")]
+transform = Transform3D(1, 0, 0, 0, 0.990031, -0.140849, 0, 0.140849, 0.990031, 5.71926, 3.08476, -6.28945)
+
+[node name="Torch3" parent="Environment/WallItems" instance=ExtResource("21_hexi4")]
+transform = Transform3D(1, 0, 0, 0, 0.990031, -0.140849, 0, 0.140849, 0.990031, 15.6876, 3.08476, -6.28945)
+
+[node name="Torch4" parent="Environment/WallItems" instance=ExtResource("21_hexi4")]
+transform = Transform3D(1, 0, 0, 0, 0.990031, -0.140849, 0, 0.140849, 0.990031, 34.0458, 3.08476, -6.28945)
+
+[node name="Torch5" parent="Environment/WallItems" instance=ExtResource("21_hexi4")]
+transform = Transform3D(1, 0, 0, 0, 0.990031, -0.140849, 0, 0.140849, 0.990031, 64.8333, 3.08476, -2.33835)
+
+[node name="Torch6" parent="Environment/WallItems" instance=ExtResource("21_hexi4")]
+transform = Transform3D(1, 0, 0, 0, 0.990031, -0.140849, 0, 0.140849, 0.990031, 73.7919, 3.08476, -2.33835)
+
+[node name="Torch7" parent="Environment/WallItems" instance=ExtResource("21_hexi4")]
+transform = Transform3D(1, 0, 0, 0, 0.990031, -0.140849, 0, 0.140849, 0.990031, 81.1601, 3.08476, -2.33835)
+
+[node name="Torch8" parent="Environment/WallItems" instance=ExtResource("21_hexi4")]
+transform = Transform3D(-0.129834, -0.139657, -0.981651, 3.36568e-09, 0.990031, -0.140849, 0.991536, -0.018287, -0.12854, 53.7795, 3.08476, -0.908434)
+
+[node name="Torch9" parent="Environment/WallItems" instance=ExtResource("21_hexi4")]
+transform = Transform3D(-0.129834, -0.139657, -0.981651, 3.36568e-09, 0.990031, -0.140849, 0.991536, -0.018287, -0.12854, 53.7795, 3.08476, 3.70633)
+
+[node name="Torch10" parent="Environment/WallItems" instance=ExtResource("21_hexi4")]
+transform = Transform3D(0.113828, 0.139934, 0.983596, 2.70496e-09, 0.990031, -0.140849, -0.993501, 0.0160325, 0.112693, 54.2526, 3.08476, 3.70602)
+
+[node name="Torch11" parent="Environment/WallItems" instance=ExtResource("21_hexi4")]
+transform = Transform3D(0.113828, 0.139934, 0.983596, 2.70496e-09, 0.990031, -0.140849, -0.993501, 0.0160325, 0.112693, 54.1782, 3.08476, -0.908133)
+
+[node name="Torch12" parent="Environment/WallItems" instance=ExtResource("21_hexi4")]
+transform = Transform3D(-0.129834, -0.139657, -0.981651, 3.36568e-09, 0.990031, -0.140849, 0.991536, -0.018287, -0.12854, -10.1381, 3.08476, -2.8193)
+
+[node name="Torch13" parent="Environment/WallItems" instance=ExtResource("21_hexi4")]
+transform = Transform3D(-0.129834, -0.139657, -0.981651, 3.36568e-09, 0.990031, -0.140849, 0.991536, -0.018287, -0.12854, -10.1381, 3.08476, 1.79546)
+
+[node name="Torch14" parent="Environment/WallItems" instance=ExtResource("21_hexi4")]
+transform = Transform3D(0.113828, 0.139934, 0.983596, 2.70496e-09, 0.990031, -0.140849, -0.993501, 0.0160325, 0.112693, -9.6651, 3.08476, 1.79516)
+
+[node name="Torch15" parent="Environment/WallItems" instance=ExtResource("21_hexi4")]
+transform = Transform3D(0.113828, 0.139934, 0.983596, 2.70496e-09, 0.990031, -0.140849, -0.993501, 0.0160325, 0.112693, -9.73952, 3.08476, -2.81899)
+
+[node name="Torch16" parent="Environment/WallItems" instance=ExtResource("21_hexi4")]
+transform = Transform3D(1, 0, 0, 0, 0.990031, -0.140849, 0, 0.140849, 0.990031, 20.3195, 6.72061, -26.3083)
+
+[node name="Torch17" parent="Environment/WallItems" instance=ExtResource("21_hexi4")]
+transform = Transform3D(1, 0, 0, 0, 0.990031, -0.140849, 0, 0.140849, 0.990031, 24.5145, 6.72061, -26.3083)
+
+[node name="Torch18" parent="Environment/WallItems" instance=ExtResource("21_hexi4")]
+transform = Transform3D(-0.339674, 0.132475, 0.931167, 0, 0.990031, -0.140849, -0.940543, -0.0478429, -0.336288, 18.2045, 3.08476, -8.46456)
+
+[node name="Torch19" parent="Environment/WallItems" instance=ExtResource("21_hexi4")]
+transform = Transform3D(-0.339674, 0.132475, 0.931167, 0, 0.990031, -0.140849, -0.940543, -0.0478429, -0.336288, 18.2045, 3.08476, -13.9061)
+
+[node name="Torch20" parent="Environment/WallItems" instance=ExtResource("21_hexi4")]
+transform = Transform3D(1, 0, 0, 0, 0.990031, -0.140849, 0, 0.140849, 0.990031, 25.5016, 6.72061, -53.1631)
+
+[node name="Torch21" parent="Environment/WallItems" instance=ExtResource("21_hexi4")]
+transform = Transform3D(1, 0, 0, 0, 0.990031, -0.140849, 0, 0.140849, 0.990031, 17.1217, 6.72061, -53.1631)
+
+[node name="Torch22" parent="Environment/WallItems" instance=ExtResource("21_hexi4")]
+transform = Transform3D(1, 0, 0, 0, 0.990031, -0.140849, 0, 0.140849, 0.990031, 11.3004, 6.72061, -53.1631)
+
+[node name="Torch23" parent="Environment/WallItems" instance=ExtResource("21_hexi4")]
+transform = Transform3D(-0.00808077, 0.140845, 0.989999, -1.29182e-09, 0.990031, -0.140849, -0.999967, -0.00113817, -0.00800022, 6.0018, 6.72061, -49.2628)
+
+[node name="Torch24" parent="Environment/WallItems" instance=ExtResource("21_hexi4")]
+transform = Transform3D(-0.00808077, 0.140845, 0.989999, -1.29182e-09, 0.990031, -0.140849, -0.999967, -0.00113817, -0.00800022, 6.06952, 6.72061, -40.8832)
+
+[node name="Torch25" parent="Environment/WallItems" instance=ExtResource("21_hexi4")]
+transform = Transform3D(-0.00808077, 0.140845, 0.989999, -1.29182e-09, 0.990031, -0.140849, -0.999967, -0.00113817, -0.00800022, 6.11656, 6.72061, -35.0621)
+
+[node name="Torch26" parent="Environment/WallItems" instance=ExtResource("21_hexi4")]
+transform = Transform3D(-0.00132638, -0.140849, -0.99003, 0, 0.990031, -0.140849, 0.999999, -0.000186824, -0.00131318, 33.8344, 6.72061, -35.2167)
+
+[node name="Torch27" parent="Environment/WallItems" instance=ExtResource("21_hexi4")]
+transform = Transform3D(-0.00132638, -0.140849, -0.99003, 0, 0.990031, -0.140849, 0.999999, -0.000186824, -0.00131318, 33.8456, 6.72061, -43.9186)
+
+[node name="Torch28" parent="Environment/WallItems" instance=ExtResource("21_hexi4")]
+transform = Transform3D(-0.00132638, -0.140849, -0.99003, 0, 0.990031, -0.140849, 0.999999, -0.000186824, -0.00131318, 33.8533, 6.72061, -49.4179)
+
+[node name="Torch29" parent="Environment/WallItems" instance=ExtResource("21_hexi4")]
+transform = Transform3D(-0.00132638, -0.140849, -0.99003, 0, 0.990031, -0.140849, 0.999999, -0.000186824, -0.00131318, 25.2944, 6.72061, -46.6642)
+
+[node name="Torch30" parent="Environment/WallItems" instance=ExtResource("21_hexi4")]
+transform = Transform3D(-0.00132638, -0.140849, -0.99003, 0, 0.990031, -0.140849, 0.999999, -0.000186824, -0.00131318, 25.2944, 6.72061, -37.6011)
+
+[node name="Torch31" parent="Environment/WallItems" instance=ExtResource("21_hexi4")]
+transform = Transform3D(-0.00762699, 0.140845, 0.990002, -4.6518e-10, 0.990031, -0.140849, -0.999971, -0.00107425, -0.00755092, 16.8173, 6.72061, -37.6012)
+
+[node name="Torch32" parent="Environment/WallItems" instance=ExtResource("21_hexi4")]
+transform = Transform3D(-0.00762699, 0.140845, 0.990002, -4.6518e-10, 0.990031, -0.140849, -0.999971, -0.00107425, -0.00755092, 16.7897, 6.72061, -46.8115)
+
+[node name="Candle" parent="Environment/WallItems" instance=ExtResource("23_dh14d")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -7.52395, 1.99951, 7.0996)
+
+[node name="Candle2" parent="Environment/WallItems" instance=ExtResource("23_dh14d")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -5.23975, 1.99951, 7.0996)
+
+[node name="Candle3" parent="Environment/WallItems" instance=ExtResource("23_dh14d")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -2.52955, 1.99951, 7.0996)
+
+[node name="Candle4" parent="Environment/WallItems" instance=ExtResource("23_dh14d")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.208661, 1.99951, 7.0996)
+
+[node name="Candle5" parent="Environment/WallItems" instance=ExtResource("23_dh14d")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4.01211, 1.99951, 7.0996)
+
+[node name="Candle6" parent="Environment/WallItems" instance=ExtResource("23_dh14d")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 6.84655, 1.99951, 7.0996)
+
+[node name="Candle7" parent="Environment/WallItems" instance=ExtResource("23_dh14d")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 11.9945, 1.99951, 7.0996)
+
+[node name="Candle8" parent="Environment/WallItems" instance=ExtResource("23_dh14d")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 15.5812, 1.99951, 7.0996)
+
+[node name="Candle9" parent="Environment/WallItems" instance=ExtResource("23_dh14d")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 15.5812, 1.99951, 7.0996)
+
+[node name="Candle10" parent="Environment/WallItems" instance=ExtResource("23_dh14d")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 20.0096, 1.99951, 7.0996)
+
+[node name="Candle11" parent="Environment/WallItems" instance=ExtResource("23_dh14d")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 25.8859, 1.99951, 7.0996)
+
+[node name="Candle12" parent="Environment/WallItems" instance=ExtResource("23_dh14d")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 31.0894, 1.99951, 7.0996)
+
+[node name="Candle13" parent="Environment/WallItems" instance=ExtResource("23_dh14d")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 38.3126, 1.99951, 7.0996)
+
+[node name="Candle14" parent="Environment/WallItems" instance=ExtResource("23_dh14d")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 47.1481, 1.99951, 7.0996)
+
+[node name="Candle15" parent="Environment/WallItems" instance=ExtResource("23_dh14d")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 56.3018, 1.99951, 7.0996)
+
+[node name="Candle16" parent="Environment/WallItems" instance=ExtResource("23_dh14d")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 61.2636, 1.99951, 7.0996)
+
+[node name="Candle17" parent="Environment/WallItems" instance=ExtResource("23_dh14d")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 66.1394, 1.99951, 7.0996)
+
+[node name="Candle18" parent="Environment/WallItems" instance=ExtResource("23_dh14d")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 72.9778, 1.99951, 7.0996)
+
+[node name="Candle19" parent="Environment/WallItems" instance=ExtResource("23_dh14d")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 80.6207, 1.99951, 7.0996)
 
 [node name="UI" parent="." instance=ExtResource("2_dxy3x")]
 
