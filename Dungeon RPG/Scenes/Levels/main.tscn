@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://x1c57p12x4sw"]
+[gd_scene load_steps=62 format=3 uid="uid://x1c57p12x4sw"]
 
 [ext_resource type="Script" path="res://Scripts/Levels/Main.cs" id="1_cjg6x"]
 [ext_resource type="PackedScene" uid="uid://bsau55ah2ry6c" path="res://Scenes/General/ui.tscn" id="2_dxy3x"]
@@ -31,6 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://dlmbl5ym6jdih" path="res://Assets/Models/Dungeon/gltf/candle.gltf.glb" id="18_3lifl"]
 [ext_resource type="PackedScene" uid="uid://b62rppugihbll" path="res://Scenes/General/torch.tscn" id="21_hexi4"]
 [ext_resource type="PackedScene" uid="uid://qve5w6ad8ew1" path="res://Scenes/General/candle.tscn" id="23_dh14d"]
+[ext_resource type="Texture2D" uid="uid://cg5kptcrockup" path="res://Assets/Sprites/UI/UI ElementUI 7.png" id="32_ln0bt"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_5plf7"]
 rayleigh_color = Color(0.234476, 0.045896, 0.632697, 1)
@@ -178,6 +179,13 @@ SpriteTexture = ExtResource("10_qngi1")
 Description = "+4 Damage"
 TargetStat = 1
 Amount = 4.0
+
+[sub_resource type="Resource" id="Resource_bpf1x"]
+script = ExtResource("11_krqgg")
+SpriteTexture = ExtResource("32_ln0bt")
+Description = "+20 Health"
+TargetStat = 0
+Amount = 20.0
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_cjg6x")
@@ -390,10 +398,10 @@ transform = Transform3D(0.00301502, 0, -1.32719, 0, 1.7096, 0, 1.57041, 0, 0.002
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.6036, 1.05, 2.83605)
 
 [node name="stool_gltf" parent="Environment/NavigationRegion3D/AvoidableItems/Downstairs" instance=ExtResource("9_3jbhe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.6219, 1.05, 3.84221)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.085, 1.05, 3.84221)
 
 [node name="stool_gltf2" parent="Environment/NavigationRegion3D/AvoidableItems/Downstairs" instance=ExtResource("9_3jbhe")]
-transform = Transform3D(0.901364, 0, -0.433061, 0, 1, 0, 0.433061, 0, 0.901364, 71.8305, 1.05, 2.95934)
+transform = Transform3D(0.901364, 0, -0.433061, 0, 1, 0, 0.433061, 0, 0.901364, 71.4973, 1.05, 2.95934)
 
 [node name="box_stacked_gltf" parent="Environment/NavigationRegion3D/AvoidableItems/Downstairs" instance=ExtResource("10_ckipk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86.1752, 1.05, -0.373045)
@@ -790,6 +798,10 @@ script = ExtResource("6_rlxpi")
 target = NodePath("../Player")
 positionFromTarget = Vector3(0, 2, 6)
 
-[node name="TreasureChest" parent="." instance=ExtResource("9_nmsva")]
+[node name="StrengthTreasureChest" parent="." instance=ExtResource("9_nmsva")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.9936, 5.60776, -42.6144)
 reward = SubResource("Resource_7h6vh")
+
+[node name="HealthTreasureChest" parent="." instance=ExtResource("9_nmsva")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74.7971, 1.58689, 3.26406)
+reward = SubResource("Resource_bpf1x")
