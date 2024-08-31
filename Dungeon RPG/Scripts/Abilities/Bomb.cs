@@ -1,13 +1,7 @@
 using Godot;
 
-public partial class Bomb : Node3D
+public partial class Bomb : Ability
 {
-    [Export(PropertyHint.Range, "0,20,1")]
-    public float Damage { get; private set; } = 10;
-
-    [Export] private AnimationPlayer playerNode;
-
-
     public override void _Ready()
     {
         playerNode.AnimationFinished += HandleExpandAnimationFinished;
