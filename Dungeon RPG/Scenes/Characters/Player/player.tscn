@@ -237,7 +237,7 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_6jg4f"]
 size = Vector3(0.5, 0.5, 0.5)
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("AnimPlayerNode", "SpriteNode", "StateMachineNode", "HurtboxNode", "HitboxNode", "HitboxShapeNode")]
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("AnimPlayerNode", "SpriteNode", "StateMachineNode", "HurtboxNode", "HitboxNode", "HitboxShapeNode", "ShaderTimerNode")]
 collision_layer = 2
 collision_mask = 5
 floor_max_angle = 1.55334
@@ -250,6 +250,7 @@ StateMachineNode = NodePath("StateMachine")
 HurtboxNode = NodePath("Hurtbox")
 HitboxNode = NodePath("Hitbox")
 HitboxShapeNode = NodePath("Hitbox/CollisionShape3D")
+ShaderTimerNode = NodePath("ShaderTimer")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 material_overlay = SubResource("ShaderMaterial_74dk7")
@@ -313,3 +314,7 @@ collision_mask = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox"]
 shape = SubResource("CapsuleShape3D_nou7x")
+
+[node name="ShaderTimer" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true
